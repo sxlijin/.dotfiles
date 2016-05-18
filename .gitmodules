@@ -1,9 +1,9 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "bundle/python-mode"]
-	path = bundle/python-mode
-	url = https://github.com/klen/python-mode.git
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = http://github.com/davidhalter/jedi-vim
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
