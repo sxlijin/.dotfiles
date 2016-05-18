@@ -4,3 +4,6 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule "bundle/jedi-vim"]
+	path = bundle/jedi-vim
+	url = http://github.com/davidhalter/jedi-vim

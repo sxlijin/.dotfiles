@@ -52,3 +52,5 @@ set hlsearch
 " execute pathogen#infect()
 " syntax on
 " filetype plugin indent on
+call pathogen#infect()
+call pathogen#helptags()
