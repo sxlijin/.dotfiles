@@ -54,3 +54,6 @@ set hlsearch
 " filetype plugin indent on
 call pathogen#infect()
 call pathogen#helptags()
+
+" disable scratch/preview in jedi
+set completeopt-=preview
