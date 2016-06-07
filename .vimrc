@@ -57,3 +57,6 @@ call pathogen#helptags()
 
 " disable scratch/preview in jedi
 set completeopt-=preview
+
+" make tab completion go in the forward direction
+let g:SuperTabDefaultCompletionType = "<c-n>"
