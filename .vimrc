@@ -60,3 +60,7 @@ set completeopt-=preview
 
 " make tab completion go in the forward direction
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" automatic folding
+set foldmethod=indent
+set foldnestmax=2
