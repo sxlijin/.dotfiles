@@ -69,4 +69,12 @@ set foldnestmax=2
 " remap tabbing
 cnoreabbrev <expr> te getcmdtype() == ":" && getcmdline() == 'te' ? 'tabedit' : 'te'
 cnoreabbrev <expr> tq getcmdtype() == ":" && getcmdline() == 'tq' ? 'tabclose' : 'tq'
-
+nnoremap t1 1gt
+nnoremap t2 2gt
+nnoremap t3 3gt
+nnoremap t4 4gt
+nnoremap t5 5gt
+nnoremap t6 6gt
+nnoremap t7 7gt
+nnoremap t8 8gt
+nnoremap t9 9gt
