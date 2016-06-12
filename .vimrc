@@ -34,6 +34,7 @@ set expandtab
 
 " automatically indent to current level
 set autoindent
+set smartindent
 
 " enable line numbering
 set number
