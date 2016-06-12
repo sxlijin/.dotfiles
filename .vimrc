@@ -65,3 +65,8 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " automatic folding
 set foldmethod=indent
 set foldnestmax=2
+
+" remap tabbing
+cnoreabbrev <expr> te getcmdtype() == ":" && getcmdline() == 'te' ? 'tabedit' : 'te'
+cnoreabbrev <expr> tq getcmdtype() == ":" && getcmdline() == 'tq' ? 'tabclose' : 'tq'
+
