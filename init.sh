@@ -4,4 +4,5 @@
 
 git submodule update --init --recursive
 sudo apt install vim-python-jedi
-ln -s .vimrc ~/.vimrc
+ln -s vim/.vimrc ~/.vimrc
+ln -s vim ~/.vim

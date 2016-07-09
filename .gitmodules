@@ -1,12 +1,12 @@
 [submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
+	path = vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "bundle/jedi-vim"]
-	path = bundle/jedi-vim
+	path = vim/bundle/jedi-vim
 	url = http://github.com/davidhalter/jedi-vim
 [submodule "bundle/supertab"]
-	path = bundle/supertab
+	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
+	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
