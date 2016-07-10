@@ -10,8 +10,6 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-echo $DIR
-
 alias v='vim -p'
 alias c='clear'
 alias g='git'
