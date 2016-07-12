@@ -13,6 +13,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 alias v='vim -p'
 alias c='clear'
 alias g='git'
+alias la='ls -a'
 
 # set up autocompletion for git alias
 . ${DIR}/git/git-completion.bash
