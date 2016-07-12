@@ -12,6 +12,7 @@
      d = diff
      ds = "diff --stat"
      dc = "diff --cached"
+     dsc = "diff --stat --cached"
 
      f = fetch
 
