@@ -4,4 +4,40 @@
      default = simple
 [core]
      editor = vim
+[alias]
+     s = status
+
+     a = add
+
+     d = diff
+     ds = "diff --stat"
+     dc = "diff --cached"
+
+     f = fetch
+
+     c = commit
+     cm = "commit -m"
+     ca = "commit -am"
+     cam = "commit --amend"
+     camp = "commit -a --amend -m \"$(git log -1 --pretty=%B)\""
+
+     p = push
+     pf = "push -f"
+
+     br = branch
+     brd = "branch -d"
+
+     co = checkout
+     cob = "checkout -b"
+
+     rb = rebase
+     rbi = "rebase -i"
+
+     lg = "log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset - %C(yellow)%d%Creset %s'"
+     lgn = "!git lg -n 10"
+     lgs = "!git lg --stat"
+
+     rsh = "reset --hard"
+     rsm = "reset"
+     rss = "reset --soft"
 
