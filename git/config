@@ -8,6 +8,7 @@
      s = status
 
      a = add
+     ai = "add -i"
 
      d = diff
      ds = "diff --stat"
