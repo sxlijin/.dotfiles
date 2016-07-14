@@ -13,5 +13,6 @@ fi
 ln -s ${dotfiles_dir}/bash_aliases ~/.bash_aliases
 ln -s ${dotfiles_dir}/screenrc ~/.screenrc
 ln -s ${dotfiles_dir}/inputrc ~/.inputrc
+ln -s ${dotfiles_dir}/git/ignore ~/.gitignore
 
 git config --global include.path ${dotfiles_dir}/git/config
