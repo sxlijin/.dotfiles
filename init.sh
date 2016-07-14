@@ -7,7 +7,7 @@ sudo apt install vim-python-jedi
 
 dotfiles_dir=$(git rev-parse --show-toplevel)
 if [ ! -d ~/.vim/ ]; then
-    ln -s ${dotfiles_dir}/vim ~/.vim/
+    ln -s ${dotfiles_dir}/vim ~/.vim
     ln -s .vim/vimrc ~/.vimrc
 fi
 ln -s ${dotfiles_dir}/bash_aliases ~/.bash_aliases
