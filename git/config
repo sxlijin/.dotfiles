@@ -26,8 +26,9 @@
 
      p = push
      pf = "push -f"
-     pm = "!git ls-remote $@ > /dev/null && git push $@ \"$(git symbolic-ref HEAD)\":\"$(git symbolic-ref --short HEAD)\""
+     pm = "!pm() { git p \"$@\" \"$(git symbolic-ref HEAD):$(git symbolic-ref --short HEAD)\" ; } && pm"
      pfm = "!git pm -f"
+     pmf = "!git pfm"
 
      br = branch
      brd = "branch -d"
