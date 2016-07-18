@@ -60,6 +60,8 @@ set completeopt-=preview
 
 " make tab completion go in the forward direction
 let g:SuperTabDefaultCompletionType = "<c-n>"
+" don't automatically complete text that isn't there
+let g:jedi#smart_auto_mappings = 0
 
 " automatic folding
 set foldmethod=indent
