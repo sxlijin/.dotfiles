@@ -14,6 +14,12 @@ alias v='vim -p'
 alias c='clear'
 alias g='git'
 alias la='ls -a'
+alias tr='tree -L'
+alias t1='tl 1'
+alias t2='tl 2'
+alias t3='tl 3'
+alias t4='tl 4'
+alias t5='tl 5'
 
 # set up autocompletion for git alias
 . ${DIR}/git/git-completion.bash
