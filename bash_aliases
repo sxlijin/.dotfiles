@@ -22,6 +22,11 @@ alias t3='tl 3'
 alias t4='tl 4'
 alias t5='tl 5'
 
+export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+
+# add ruby path to $PATH
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
 # set up autocompletion for git alias
 . ${DIR}/git/git-completion.bash
 __git_complete g _git
