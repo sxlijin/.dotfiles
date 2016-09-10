@@ -67,6 +67,10 @@ let g:jedi#smart_auto_mappings = 0
 set foldmethod=indent
 set foldnestmax=2
 
+" open sp on bottom, vs on right
+set splitbelow
+set splitright
+
 " remap tabbing
 cnoreabbrev <expr> te getcmdtype() == ":" && getcmdline() == 'te' ? 'tabedit' : 'te'
 cnoreabbrev <expr> tq getcmdtype() == ":" && getcmdline() == 'tq' ? 'tabclose' : 'tq'
