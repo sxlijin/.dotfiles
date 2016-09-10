@@ -30,7 +30,7 @@
      cm = "commit -m"
      ca = "commit -am"
      cam = "commit --amend"
-     camp = "commit -a --amend -m \"$(git log -1 --pretty=%B)\""
+     camm = "!camm() { : git commit ; git commit --amend --message \"$(git log --max-count=1 --pretty=%B)\" ; } && camm"
 
      p = push
      pf = "push -f"
