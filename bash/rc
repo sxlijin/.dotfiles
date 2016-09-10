@@ -1,0 +1,56 @@
+#!/bin/bash
+# ~/.bashrc: bash(1) individual per-interactive-shell startup file
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# bash(1): A colon-separated list of values controlling how commands are saved
+# on the history list. [...]  A value of ignoredups causes lines matching the
+# previous history entry to not be saved.
+HISTCONTROL=ignoredups
+
+# bash(1): The maximum number of lines contained in the history file. When this
+# variable is assigned a value, the history file is truncated, if necessary, to
+# contain no more than that number of lines [...] Non-numeric values and numeric
+# values less than zero inhibit truncation. The shell sets the default value to
+# the value of HISTSIZE after reading any startup files.
+HISTFILESIZE=-1
+
+# bash(1): The number of commands to remember in the command history (see
+# HISTORY below).  [..] Numeric values less than zero result in every command
+# being saved on the history list (there is no limit).
+HISTSIZE=-1
+shopt -s histappend
+
+# bash(1): If set, bash checks the window size after each command and, if
+# necessary, updates the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+if [ "$color_prompt" = yes ]; then
+    PS1=''
+    PS1+='\[\e[01;32m\]\u@\h\[\e[00m\]'
+    PS1+=':'
+    PS1+='\[\e[01;34m\]\w\[\e[00m\]'
+    PS1+='\[\e[01;36m\]$(__git_ps1)\[\e[00m\]'
+    PS1+='\n\$ '
+else
+    PS1='\u@\h:\w$(__git_ps1)\n\$ '
+fi
+unset color_prompt
+
+# add ruby path to $PATH
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+# set up git autocompletion
+. "$(dirname $(readlink -f \"${BASH_SOURCE[0]}\"))/git/git-completion.bash"
+__git_complete g _git
+
+# source the git ps1
+. "$(dirname $(readlink -f \"${BASH_SOURCE[0]}\"))/git/git-prompt.bash"
+
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
