@@ -3,7 +3,6 @@
 # Runs the appropriate commands to set up this .vimrc.
 
 git submodule update --init --recursive
-sudo apt install vim-python-jedi
 
 dotfiles_dir=$(git rev-parse --show-toplevel)
 if [ ! -d ~/.vim/ ]; then
