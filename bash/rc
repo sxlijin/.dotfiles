@@ -27,6 +27,10 @@ HISTFILESIZE=-1
 # HISTORY below).  [..] Numeric values less than zero result in every command
 # being saved on the history list (there is no limit).
 HISTSIZE=-1
+
+# bash(1): If set, the history list is appended to the file named by the value
+# of the HISTFILE variable when the shell exits, rather than overwriting the
+# file.
 shopt -s histappend
 
 # bash(1): If set, bash checks the window size after each command and, if
