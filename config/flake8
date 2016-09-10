@@ -1,0 +1,6 @@
+[flake8]
+ignore =
+    E731
+exclude =
+    .git
+max-line-length = 120
