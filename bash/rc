@@ -4,6 +4,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+function dotfiles_root {
+    this_src="$(readlink -f ${BASH_SOURCE[0]})"
+    this_dir="$(dirname ${this_src})"
+    git_root="$(cd -P ${this_dir} && git rev-parse --show-toplevel)"
+    echo "${git_root}"
+}
+
 # bash(1): A colon-separated list of values controlling how commands are saved
 # on the history list. [...]  A value of ignoredups causes lines matching the
 # previous history entry to not be saved.
@@ -47,10 +54,10 @@ unset color_prompt
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # set up git autocompletion
-. "$(dirname $(readlink -f \"${BASH_SOURCE[0]}\"))/git/git-completion.bash"
+. "$(dotfiles_root)/git/git-completion.bash"
 __git_complete g _git
 
 # source the git ps1
-. "$(dirname $(readlink -f \"${BASH_SOURCE[0]}\"))/git/git-prompt.bash"
+. "$(dotfiles_root)/git/git-prompt.sh"
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
