@@ -71,9 +71,16 @@ set foldnestmax=2
 set splitbelow
 set splitright
 
-" remap tabbing
+" use autopep8 with 120 max line width
+set formatprg=autopep8\ --max-line-length\ 120\ -
+nnoremap <F8> mx gggqG `x :delmarks x<CR>
+
+" make tabbing more useful
 cnoreabbrev <expr> te getcmdtype() == ":" && getcmdline() == 'te' ? 'tabedit' : 'te'
-cnoreabbrev <expr> tq getcmdtype() == ":" && getcmdline() == 'tq' ? 'tabclose' : 'tq'
+cnoreabbrev <expr> tm getcmdtype() == ":" && getcmdline() == 'tm' ? 'tabmove' : 'tm'
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprev<CR>
+nnoremap tq :tabclose<CR>
 nnoremap t1 1gt
 nnoremap t2 2gt
 nnoremap t3 3gt
@@ -83,3 +90,4 @@ nnoremap t6 6gt
 nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
+set tabpagemax=100
