@@ -17,7 +17,7 @@
      s = status
 
      a = add
-     ai = "add -i"
+     ai = "add --interactive"
 
      d = diff
      ds = "diff --stat"
@@ -27,25 +27,25 @@
      f = fetch
 
      c = commit
-     cm = "commit -m"
-     ca = "commit -am"
+     cm = "commit --message"
+     ca = "commit --all --message"
      cam = "commit --amend"
      camm = "!camm() { : git commit ; git commit --amend --message \"$(git log --max-count=1 --pretty=%B)\" ; } && camm"
 
      p = push
-     pf = "push -f"
+     pf = "push --force"
      pm = "!pm() { : git push ; git p \"$@\" \"$(git symbolic-ref HEAD):$(git symbolic-ref --short HEAD)\" ; } && pm"
-     pfm = "!git pm -f"
+     pfm = "!git pm --force"
      pmf = "!git pfm"
 
      br = branch
-     brd = "branch -d"
+     brd = "branch --delete"
 
      co = checkout
      cob = "checkout -b"
 
      rb = rebase
-     rbi = "rebase -i"
+     rbi = "rebase --interactive"
 
      lg = "log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset - %C(yellow)%d%Creset %s'"
      lgn = "!git lg -n 10"
