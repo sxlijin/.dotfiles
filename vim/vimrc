@@ -23,14 +23,15 @@ endif
 syntax enable
 
 " avoid using \t in files:
-" $tabstop is how many spaces a \t appears as
-" $softtabstop is how many spaces are inserted/removed by tabbing and backspacing over tabs
-" $shiftwidth seems to be necessary to prevent double tabbing on <Enter>
-" $expandtab replaces \t in realtime with spaces as inserted
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+" $ts $tabstop is how many spaces a \t appears as
+" $sts $softtabstop is how many spaces are inserted/removed by soft tabbing
+" $sw $shiftwidth controls reindent << and >> ops
+" $et $expandtab replaces \t in realtime with spaces as inserted
+set ts=4 sts=4 sw=4 et
+autocmd Filetype python     setlocal    ts=4 sts=4 sw=4  et
+autocmd Filetype html       setlocal    ts=2 sts=2 sw=2  et
+autocmd Filetype css        setlocal    ts=2 sts=2 sw=2  et
+autocmd Filetype javascript setlocal    ts=2 sts=2 sw=2  et
 
 " automatically indent to current level
 set autoindent
