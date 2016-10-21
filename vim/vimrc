@@ -28,10 +28,11 @@ syntax enable
 " $sw $shiftwidth controls reindent << and >> ops
 " $et $expandtab replaces \t in realtime with spaces as inserted
 set ts=4 sts=4 sw=4 et
-autocmd Filetype python     setlocal    ts=4 sts=4 sw=4  et
-autocmd Filetype html       setlocal    ts=2 sts=2 sw=2  et
-autocmd Filetype css        setlocal    ts=2 sts=2 sw=2  et
-autocmd Filetype javascript setlocal    ts=2 sts=2 sw=2  et
+
+" use file-specific indentation settings in .vim/ftplugin/language.vim
+filetype on
+filetype plugin on
+filetype indent on
 
 " automatically indent to current level
 set autoindent
@@ -71,10 +72,6 @@ set foldnestmax=2
 " open sp on bottom, vs on right
 set splitbelow
 set splitright
-
-" use autopep8 with 120 max line width
-set formatprg=autopep8\ --max-line-length\ 120\ -
-nnoremap <F8> mx gggqG `x :delmarks x<CR>
 
 " make tabbing more useful
 cnoreabbrev <expr> te getcmdtype() == ":" && getcmdline() == 'te' ? 'tabedit' : 'te'
