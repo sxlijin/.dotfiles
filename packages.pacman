@@ -1,10 +1,13 @@
+arch-install-scripts
 autoconf
 automake
 bash
 bind-tools
+binutils
 bison
 bzip2
 cifs-utils
+clang
 cmake
 colordiff
 coreutils
@@ -14,6 +17,7 @@ dhcpcd
 diffutils
 docker
 dos2unix
+dosfstools
 dwdiff
 e2fsprogs
 fakeroot
@@ -30,6 +34,7 @@ gettext
 git
 glibc
 grep
+groff
 grub
 gzip
 inetutils
@@ -49,6 +54,8 @@ make
 man-db
 man-pages
 mdadm
+mongodb
+mongodb-tools
 nano
 netctl
 nfs-utils
@@ -77,6 +84,7 @@ s-nail
 sed
 shadow
 sudo
+swi-prolog
 sysfsutils
 systemd-sysvcompat
 tar
