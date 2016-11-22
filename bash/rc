@@ -7,6 +7,7 @@
 function dotfiles_root {
     this_src="$(readlink -f ${BASH_SOURCE[0]})"
     this_dir="$(dirname ${this_src})"
+    test -L "${BASH_SOURCE[0]}" || this_dir="${this_dir}/.dotfiles"
     git_root="$(cd -P ${this_dir} && git rev-parse --show-toplevel)"
     echo "${git_root}"
 }
