@@ -50,6 +50,8 @@
      lg = "log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset - %C(yellow)%d%Creset %s'"
      lgn = "!git lg -n 10"
      lgs = "!git lg --stat"
+     lgp = "!git lg --patch"
+     lgsp = "!git lgs --patch"
 
      rsh = "reset --hard"
      rsm = "reset"
