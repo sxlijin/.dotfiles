@@ -67,8 +67,10 @@ unset color_prompt
 # set LS_COLORS
 eval $(dircolors -b "$(dotfiles_root)/dircolors")
 
-# add ruby path to $PATH
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+# if ruby installed, add ruby path to $PATH
+if [[ $(hash ruby 2> /dev/null) ]]; then
+    PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+fi
 
 # set up git autocompletion
 . "$(dotfiles_root)/git/git-completion.bash"
