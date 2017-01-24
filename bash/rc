@@ -17,17 +17,23 @@ function dotfiles_root {
 # previous history entry to not be saved.
 HISTCONTROL=ignoredups
 
+# Unfortunately older versions of bash (as recent as 4.4) do not allow for
+# negative values (pitfalls of being on Arch) so I'm just using 2^32-1.
+#
 # bash(1): The maximum number of lines contained in the history file. When this
 # variable is assigned a value, the history file is truncated, if necessary, to
 # contain no more than that number of lines [...] Non-numeric values and numeric
 # values less than zero inhibit truncation. The shell sets the default value to
 # the value of HISTSIZE after reading any startup files.
-HISTFILESIZE=-1
+HISTFILESIZE=2147483647
 
+# Unfortunately older versions of bash (as recent as 4.4) do not allow for
+# negative values (pitfalls of being on Arch) so I'm just using 2^32-1.
+#
 # bash(1): The number of commands to remember in the command history (see
 # HISTORY below).  [..] Numeric values less than zero result in every command
 # being saved on the history list (there is no limit).
-HISTSIZE=-1
+HISTSIZE=2147483647
 
 # bash(1): If set, the history list is appended to the file named by the value
 # of the HISTFILE variable when the shell exits, rather than overwriting the
