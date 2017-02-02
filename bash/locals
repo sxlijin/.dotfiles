@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Put bash aliases that we want to keep local to the machine here.
+# This file is .gitignore'd, so any changes to it will be ignored.
+
