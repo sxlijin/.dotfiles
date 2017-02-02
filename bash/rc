@@ -85,3 +85,4 @@ __git_complete g _git
 . "$(dotfiles_root)/git/git-prompt.sh"
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.bash_locals  ] && . ~/.bash_locals
