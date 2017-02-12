@@ -75,7 +75,8 @@ eval $(dircolors -b "$(dotfiles_root)/dircolors")
 
 # if ruby installed, add ruby path to $PATH
 (hash ruby > /dev/null 2>&1) \
-    && export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH:$HOME/.rvm/bin"
+    && export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH:$HOME/.rvm/bin" \
+    || :
 
 # set up git autocompletion
 . "$(dotfiles_root)/git/git-completion.bash"
