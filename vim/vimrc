@@ -65,6 +65,10 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " don't automatically complete text that isn't there
 let g:jedi#smart_auto_mappings = 0
 
+" display tabs as special chars
+set list
+set listchars=tab:→.
+
 " automatic folding
 set foldmethod=indent
 set foldnestmax=2
