@@ -44,6 +44,8 @@
      co = checkout
      cob = "checkout -b"
 
+     ch = cherry-pick
+
      rb = rebase
      rbi = "rebase --interactive"
 
