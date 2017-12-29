@@ -34,6 +34,3 @@ HERE_DOC
 
 # don't symlink this: global git config will include machine-specific config
 git config --global include.path ${dotfiles_dir}/git/config
-
-# tell git to ignore changes in bash/locals
-git update-index --assume-unchanged ${dotfiles_dir}/bash/locals
