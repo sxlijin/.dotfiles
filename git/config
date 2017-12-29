@@ -5,6 +5,8 @@
 [core]
      editor = vim
      excludesfile = ~/.gitignore
+[merge]
+    conflictstyle = diff3
 [pretty]
     me = format:%Cred%h%Creset %Cgreen(%cr)%Creset -%C(auto)%d%Creset %s
 [alias]
