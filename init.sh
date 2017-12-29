@@ -6,14 +6,19 @@ git submodule update --init --recursive
 
 dotfiles_dir=$(git rev-parse --show-toplevel)
 
+tstamp="$(date "+%F-%T")"
+tstamp="${tstamp//:/-}"
+
 while read link_dest link_ptr
 do
     link_ptr="${HOME}/${link_ptr}"
 
-    test -f "${link_ptr}" \
-        && echo "file exists: ${link_ptr}" \
-        && mv "${link_ptr}" "${link_ptr}.bak"
+    test -e "${link_ptr}" \
+        && echo "[WARN] file/dir exists: ${link_ptr}" \
+        && mv "${link_ptr}" "${link_ptr}_${tstamp}.bak"
+
     ln -s "${link_dest}" "${link_ptr}"
+
 done << HERE_DOC
 ${dotfiles_dir}/bash/profile    .bash_profile
 ${dotfiles_dir}/bash/rc         .bashrc
