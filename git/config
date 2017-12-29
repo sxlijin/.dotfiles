@@ -5,6 +5,8 @@
 [core]
      editor = vim
      excludesfile = ~/.gitignore
+[pretty]
+    me = format:%Cred%h%Creset %Cgreen(%cr)%Creset -%C(auto)%d%Creset %s
 [alias]
 # From https://github.com/git/git/blob/master/contrib/completion/git-completion.bash#L26-L30
 #
@@ -49,11 +51,11 @@
      rb = rebase
      rbi = "rebase --interactive"
 
-     lg = "log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset - %C(yellow)%d%Creset %s'"
-     lgn = "!git lg -n 10"
-     lgs = "!git lg --stat"
-     lgp = "!git lg --patch"
-     lgsp = "!git lgs --patch"
+     lg =     "!lg() { : git log ; git log --pretty=me \"$@\" ; } && lg"
+     lgn =   "!lgn() { : git log ; git lg -n 10        \"$@\" ; } && lgn"
+     lgs =   "!lgs() { : git log ; git lg --stat       \"$@\" ; } && lgs"
+     lgp =   "!lgp() { : git log ; git lg --patch      \"$@\" ; } && lgp"
+     lgsp = "!lgsp() { : git log ; git lgs --patch     \"$@\" ; } && lgsp"
 
      rsh = "reset --hard"
      rsm = "reset"
