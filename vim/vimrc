@@ -78,8 +78,10 @@ set list
 set listchars=tab:→.
 
 " automatic folding
-set foldmethod=indent
-set foldnestmax=2
+set foldmethod=syntax
+set foldnestmax=3
+" unfold to deepest level automatically
+autocmd Syntax * normal zR
 
 " open sp on bottom, vs on right
 set splitbelow
