@@ -73,10 +73,18 @@ unset color_prompt
 # set LS_COLORS
 eval $(dircolors -b "$(dotfiles_root)/dircolors")
 
+export EDITOR=vim
+
+# disable flow control so C-s can be used to search forward
+stty -ixon
+
 # if ruby installed, add ruby path to $PATH
 (hash ruby > /dev/null 2>&1) \
     && export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH:$HOME/.rvm/bin" \
     || :
+
+# Load RVM into a shell session *as a function*
+[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" || :
 
 # set up git autocompletion
 . "$(dotfiles_root)/git/git-completion.bash"
