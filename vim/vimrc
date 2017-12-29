@@ -43,8 +43,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" automatically indent to current level
-set autoindent
+set smartindent
 
 " enable line numbering
 set number
