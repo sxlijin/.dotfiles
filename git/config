@@ -30,7 +30,7 @@
      cm = "commit --message"
      ca = "commit --all --message"
      cam = "commit --amend"
-     camm = "!camm() { : git commit ; git commit --amend --message \"$(git log --max-count=1 --pretty=%B)\" ; } && camm"
+     cane = "!cane() { : git commit ; git commit --amend --no-edit ; } && cane"
 
      p = push
      pf = "push --force"
