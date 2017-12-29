@@ -88,10 +88,10 @@ set splitbelow
 set splitright
 
 " make tabbing more useful
-cnoreabbrev <expr> te getcmdtype() == ":" && getcmdline() == 'te' ? 'tabedit' : 'te'
-cnoreabbrev <expr> tm getcmdtype() == ":" && getcmdline() == 'tm' ? 'tabmove' : 'tm'
-nnoremap tn :tabnext<CR>
-nnoremap tp :tabprev<CR>
+cnoreabbrev te tabedit
+cnoreabbrev tm tabmove
+nnoremap tk :tabprev<CR>
+nnoremap tj :tabnext<CR>
 nnoremap tq :tabclose<CR>
 nnoremap t1 1gt
 nnoremap t2 2gt
