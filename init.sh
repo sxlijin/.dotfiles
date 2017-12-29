@@ -19,9 +19,10 @@ ${dotfiles_dir}/bash/profile    .bash_profile
 ${dotfiles_dir}/bash/rc         .bashrc
 ${dotfiles_dir}/bash/aliases    .bash_aliases
 ${dotfiles_dir}/bash/locals     .bash_locals
-${dotfiles_dir}/screenrc        .screenrc
-${dotfiles_dir}/inputrc         .inputrc
 ${dotfiles_dir}/git/ignore      .gitignore
+${dotfiles_dir}/inputrc         .inputrc
+${dotfiles_dir}/screenrc        .screenrc
+${dotfiles_dir}/tmux.conf       .tmux.conf
 ${dotfiles_dir}/vim             .vim
 .vim/vimrc                      .vimrc
 HERE_DOC
