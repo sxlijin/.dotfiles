@@ -5,11 +5,6 @@
 git submodule update --init --recursive
 
 dotfiles_dir=$(git rev-parse --show-toplevel)
-if [ ! -d ~/.vim/ ]; then
-    # symlink the vim files
-    ln -s ${dotfiles_dir}/vim ~/.vim
-    ln -s .vim/vimrc ~/.vimrc
-fi
 
 while read link_dest link_ptr
 do
@@ -27,6 +22,8 @@ ${dotfiles_dir}/bash/locals     .bash_locals
 ${dotfiles_dir}/screenrc        .screenrc
 ${dotfiles_dir}/inputrc         .inputrc
 ${dotfiles_dir}/git/ignore      .gitignore
+${dotfiles_dir}/vim             .vim
+.vim/vimrc                      .vimrc
 HERE_DOC
 
 # don't symlink this: global git config will include machine-specific config
