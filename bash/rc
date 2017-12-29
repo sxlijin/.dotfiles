@@ -15,7 +15,7 @@ function dotfiles_root {
 # bash(1): A colon-separated list of values controlling how commands are saved
 # on the history list. [...]  A value of ignoredups causes lines matching the
 # previous history entry to not be saved.
-HISTCONTROL=ignoredups
+HISTCONTROL=ignoredups:erasedups
 
 # Unfortunately older versions of bash (as recent as 4.4) do not allow for
 # negative values (pitfalls of being on Arch) so I'm just using 2^32-1.
