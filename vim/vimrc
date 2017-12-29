@@ -27,6 +27,10 @@ endif
 " enable syntax processing
 syntax enable
 
+" simplify entering commands
+nnoremap ; :
+nnoremap : ;
+
 " avoid using \t in files:
 " $ts $tabstop is how many spaces a \t appears as
 " $sts $softtabstop is how many spaces are inserted/removed by soft tabbing
