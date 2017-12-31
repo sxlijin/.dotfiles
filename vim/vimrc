@@ -2,9 +2,9 @@ set nocompatible
 set term=xterm
 
 " load local config
-"if filereadable('~/.vimrc_locals')
-"  source ~/.vimrc_locals
-"endif
+if filereadable('~/.vimrc_locals')
+  source ~/.vimrc_locals
+endif
 
 " load plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
