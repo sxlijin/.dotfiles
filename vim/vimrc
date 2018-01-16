@@ -2,7 +2,7 @@ set nocompatible
 set term=xterm
 
 " load local config
-if filereadable('~/.vimrc_locals')
+if filereadable(expand('~/.vimrc_locals'))
   source ~/.vimrc_locals
 endif
 
