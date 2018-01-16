@@ -85,7 +85,9 @@ set tabpagemax=100
 " TODO: auto-disable in putty
 set mouse=a
 
-" automatic pastetoggle when pasting text
-" pastes are preceded by <Esc>[200~ and terminated by <Esc>[201~
+" enable bracketed paste with t_ti, t_te
+" and use it to pastetoggle
+let &t_ti .= "\<Esc>[?2004h"
+let &t_te .= "\<Esc>[?2004l"
 imap <Esc>[200~ <C-o>;set paste<CR>
 set pastetoggle=<Esc>[201~
