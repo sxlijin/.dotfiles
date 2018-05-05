@@ -31,6 +31,9 @@ vnoremap ; :
 nnoremap : ;
 vnoremap : ;
 
+" remap jj to escape in insert mode
+inoremap jj <ESC>
+
 " assorted usability settings
 set number
 set cursorline
