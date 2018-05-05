@@ -1,5 +1,4 @@
 set nocompatible
-set term=xterm
 
 " load local config
 if filereadable(expand('~/.vimrc_locals'))
@@ -81,9 +80,23 @@ nnoremap t9 9gt
 set showtabline=2
 set tabpagemax=100
 
-" enable right-click paste
-" TODO: auto-disable in putty
-set mouse=a
+if has('mouse')
+  set mouse=a
+  set mousefocus
+
+  " urxvt implements a nonstandard mouse protocol (1015) that supports faster
+  " dragging and terminals wider than 223 columns, but Vim doesn't know this.
+  if &term =~# '\v^rxvt-unicode%(-|$)'
+    set ttymouse=urxvt
+  endif
+
+  " tmux implements an upgraded xterm mouse protocol (1006) that supports faster
+  " dragging and terminals wider than 223 columns, but it doesn't implement the
+  " xterm escape sequence that would allow Vim to autodetect this.
+  if &term =~# '\v^tmux%(-|$)'
+    set ttymouse=sgr
+  endif
+endif
 
 " enable bracketed paste with t_ti, t_te
 " and use it to pastetoggle
