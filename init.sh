@@ -6,8 +6,7 @@ git submodule update --init --recursive
 
 dotfiles_dir=$(git rev-parse --show-toplevel)
 
-tstamp="$(date "+%F-%T")"
-tstamp="${tstamp//:/-}"
+tstamp="$(date "+%F-%H-%M-%S")"
 
 while read link_dest link_ptr
 do
