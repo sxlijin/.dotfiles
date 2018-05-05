@@ -93,5 +93,12 @@ __git_complete g _git
 # source the git ps1
 . "$(dotfiles_root)/git/git-prompt.sh"
 
-[ -s ~/.bash_aliases ] && . ~/.bash_aliases
-[ -s ~/.bash_locals  ] && . ~/.bash_locals
+if [ -s ~/.bash_aliases ]
+then
+  . ~/.bash_aliases
+fi
+
+if [ -s ~/.bash_locals ]
+then
+  . ~/.bash_locals
+fi
