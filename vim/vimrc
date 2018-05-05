@@ -13,9 +13,11 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " make tab completion go in the forward direction
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" centralize backups, instead of scattering them
+" centralize swps and backups, instead of scattering them
 set backupdir-=.
-set backupdir^=~/.vim/bak
+set backupdir^=~/.vim/bak/
+set directory-=.
+set directory^=~/.vim/swp/
 
 " color settings
 set t_Co=256
