@@ -27,7 +27,9 @@ colorscheme tomorrow-night-sxlijin
 
 " simplify command entry
 nnoremap ; :
+vnoremap ; :
 nnoremap : ;
+vnoremap : ;
 
 " assorted usability settings
 set number
