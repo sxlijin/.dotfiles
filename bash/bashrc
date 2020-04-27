@@ -35,6 +35,9 @@ HISTFILESIZE=2147483647
 # being saved on the history list (there is no limit).
 HISTSIZE=2147483647
 
+# Apply ISO-8601 format timestamps to history.
+HISTTIMEFORMAT="%FT%T%z "
+
 # bash(1): If set, the history list is appended to the file named by the value
 # of the HISTFILE variable when the shell exits, rather than overwriting the
 # file.
