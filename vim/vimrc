@@ -60,7 +60,7 @@ autocmd FileType go setlocal noexpandtab
 " syntax magic
 syntax on
 filetype plugin indent on
-set smartindent
+"set cindent cinkeys-=0#
 
 " folds
 set foldmethod=syntax
