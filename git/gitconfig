@@ -31,8 +31,7 @@
      f = fetch
 
      c = commit
-     cm = "commit --message"
-     ca = "commit --all --message"
+     ca = "commit --all"
      cam = "commit --amend"
      cane = "!cane() { : git commit ; git commit --amend --no-edit ; } && cane"
 
@@ -62,4 +61,3 @@
      rsh = "reset --hard"
      rsm = "reset"
      rss = "reset --soft"
-
