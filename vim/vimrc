@@ -110,4 +110,6 @@ endif
 let &t_ti .= "\<Esc>[?2004h"
 let &t_te .= "\<Esc>[?2004l"
 imap <Esc>[200~ <C-o>;set paste<CR>
+cmap <Esc>[200~ <nop>
+cmap <Esc>[201~ <nop>
 set pastetoggle=<Esc>[201~
