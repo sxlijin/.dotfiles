@@ -39,6 +39,7 @@ set number
 set cursorline
 set wildmenu
 set lazyredraw
+set laststatus=2
 
 " improve search visuals
 set incsearch
