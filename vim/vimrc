@@ -53,7 +53,8 @@ set listchars=tab:→.,trail:-,extends:>,precedes:<,nbsp:+
 " $sts $softtabstop spaces inserted/removed by <TAB>/<BS>
 " $sw  $shiftwidth  spaces used for builtin indent ops, e.g. <<, >>
 " $et  $expandtab   insert spaces until $sts on <TAB>
-set ts=2 sts=2 sw=2 et
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType go setlocal noexpandtab
 
 " syntax magic
 syntax on
