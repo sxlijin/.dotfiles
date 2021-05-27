@@ -94,6 +94,9 @@ stty -ixon
 # Load RVM into a shell session *as a function*
 [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" || :
 
+# Load cargo
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env" || :
+
 # set up git autocompletion
 . "$(dotfiles_root)/git/git-completion.bash"
 __git_complete g _git
@@ -110,5 +113,18 @@ if [ -s ~/.bash_locals ]
 then
   . ~/.bash_locals
 fi
+
+# THIS IS NOT YET COMMITTED. AM USING THIS CONFIG TO TRY THINGS OUT.
+#
+# kinda nasty way to silence tracing during tab-completion
+#SUPPRESS_TRACING_REWRITE="s|^{|{\n    { set +x; } 2>/dev/null;|;s|^}|    set -x;\n}|"
+#eval "$(declare -f _completion_loader | sed "$SUPPRESS_TRACING_REWRITE")"
+#eval "$(declare -f _minimal           | sed "$SUPPRESS_TRACING_REWRITE")"
+#eval "$(declare -f _longopt           | sed "$SUPPRESS_TRACING_REWRITE")"
+#unset SUPPRESS_TRACING_REWRITE
+# We *could* apply various hacks to make command tracing work nicely with the
+# various tab completions that bash comes with, but honestly? I don't use any
+# of them, so I just throw them all away.
+complete -r
 
 set -x
