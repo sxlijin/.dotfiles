@@ -81,6 +81,10 @@ PS4='++ $(date --iso-8601=seconds) ++ '
 # set LS_COLORS
 eval $(dircolors -b "$(dotfiles_root)/dircolors")
 
+# set up vcxsrv correctly
+(uname -r | grep --silent WSL2) \
+    && export DISPLAY="$(ip route show default | awk '{print $3 }'):0.0"
+
 export EDITOR=vim
 
 # disable flow control so C-s can be used to search forward

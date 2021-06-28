@@ -34,5 +34,16 @@ ${dotfiles_dir}/xsessionrc        .xsessionrc
 .vim/gvimrc                       .gvimrc
 HERE_DOC
 
+if [[ $(uname -r) =~ WSL2 ]]; then
+  echo "WSL2 detected: bootstrapping"
+  windows_user="$(cmd.exe /c 'echo %USERNAME%' | sed -e 's/\s*//g')"
+  windows_home="/mnt/c/Users/${windows_user}"
+
+  echo "Bootstrapping VcXsrv..."
+  vcxsrv_startup_path="${windows_home}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/config.xlaunch"
+  rm -f "${vcxsrv_startup_path}"
+  cp ~/.dotfiles/wsl2/vcxsrv_config.xlaunch "${vcxsrv_startup_path}"
+fi
+
 # don't symlink this: global git config will include machine-specific config
 git config --global include.path ${dotfiles_dir}/git/gitconfig
