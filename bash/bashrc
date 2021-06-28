@@ -104,6 +104,9 @@ __git_complete g _git
 # source the git ps1
 . "$(dotfiles_root)/git/git-prompt.sh"
 
+# configure https://direnv.net/
+[ -s "/usr/bin/direnv" ] && eval "$(direnv hook bash)" || :
+
 if [ -s ~/.bash_aliases ]
 then
   . ~/.bash_aliases
