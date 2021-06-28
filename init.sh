@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -ex
 
 # Runs the appropriate commands to set up the dotfiles configuration.
 
