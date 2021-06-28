@@ -2,6 +2,7 @@ $include /etc/inputrc
 set mark-symlinked-directories on
 set show-all-if-ambiguous on
 set completion-ignore-case on
+set bell-style none
 
 "\eOD": backward-word
 "\eOC": forward-word
