@@ -2,6 +2,10 @@
      helper = store
 [push]
      default = simple
+[pull]
+    ff = only
+[fetch]
+    prune = true
 [core]
      editor = vim
      excludesfile = ~/.gitignore
@@ -9,6 +13,8 @@
     conflictstyle = diff3
 [pretty]
     me = format:%Cred%h%Creset %Cgreen(%cr)%Creset -%C(auto)%d%Creset %s
+[features]
+    manyFiles = true
 [alias]
 # From https://github.com/git/git/blob/master/contrib/completion/git-completion.bash#L26-L30
 #
