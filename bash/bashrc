@@ -111,7 +111,7 @@ __git_complete g _git
 # configure https://direnv.net/
 [ -s "/usr/bin/direnv" ] && eval "$(direnv hook bash)" || :
 
-PROMPT_COMMAND="{ set +x; } 2>/dev/null; ${PROMPT_COMMAND}; set -x"
+PROMPT_COMMAND="{ set +x; } 2>/dev/null; ${PROMPT_COMMAND/%;*/}; set -x"
 
 if [ -s ~/.bash_aliases ]
 then
