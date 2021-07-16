@@ -120,7 +120,13 @@ __git_complete g _git
 # configure https://direnv.net/
 [ -s "/usr/bin/direnv" ] && eval "$(direnv hook bash)" || :
 
-PROMPT_COMMAND="{ set +x; } 2>/dev/null; ${PROMPT_COMMAND/%;*/}; set -x"
+if [ -n "${PROMPT_COMMAND}" ]
+then
+  # Strip trailing command delimiter from PROMPT_COMMAND using parameter
+  # expansion.  Bash does not consider consecutive command delimiters legal, so
+  # we don't have to worry about replacing ;*$.
+  PROMPT_COMMAND="{ set +x; } 2>/dev/null; ${PROMPT_COMMAND/%;/}; set -x"
+fi
 
 if [ -s ~/.bash_aliases ]
 then
