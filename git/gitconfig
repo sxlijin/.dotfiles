@@ -50,8 +50,8 @@
      br = branch
      brd = "branch --delete"
 
-     co = checkout
-     cob = "checkout -b"
+     co =   "!co() { : git checkout ; if [ \"$1\" = -- ]; then git checkout    \"$@\"; else git checkout    \"sam/$@\"; fi; } && co"
+     cob = "!cob() { : git checkout ; if [ \"$1\" = -- ]; then git checkout -b \"$@\"; else git checkout -b \"sam/$@\"; fi; } && cob"
 
      ch = cherry-pick
 
