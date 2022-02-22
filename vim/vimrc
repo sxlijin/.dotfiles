@@ -63,9 +63,9 @@ syntax on
 filetype plugin indent on
 "set cindent cinkeys-=0#
 
-" folds
+" folds (foldnestmax has a hardcoded max of 20)
 set foldmethod=syntax
-set foldnestmax=3
+set foldnestmax=20
 autocmd Syntax * normal zR
 
 " splits
