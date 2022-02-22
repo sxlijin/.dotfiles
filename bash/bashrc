@@ -85,7 +85,7 @@ else
 fi
 unset color_prompt
 
-PS4='++ $(date --iso-8601=seconds) ++ '
+PS4='++ $(date "+%Y-%m-%dT%H:%M:%S%z") ++ '
 
 # set LS_COLORS
 eval $(dircolors -b "$(dotfiles_root)/dircolors")
