@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
            { exit_code="$?"; set +x; } 2>/dev/null;
            echo -n "\[\e[01;32m\]\u@\h\[\e[00m\]";
            echo -n ":"
-           echo -n "\[\e[00;95m\]$(date --iso-8601=seconds)\[\e[00m\]"
+           echo -n "\[\e[00;95m\]$(date "+%Y-%m-%dT%H:%M:%S%z")\[\e[00m\]"
            echo -n ":"
            echo -n "\[\e[01;34m\]\w\[\e[00m\]"
            echo -n "\[\e[01;36m\]$(__git_ps1)\[\e[00m\]"
@@ -74,7 +74,7 @@ else
            { exit_code="$?"; set +x; } 2>/dev/null;
            echo -n "\u@\h";
            echo -n ":"
-           echo -n "$(date --iso-8601=seconds)"
+           echo -n "$(date "+%Y-%m-%dT%H:%M:%S%z")"
            echo -n ":"
            echo -n "\w"
            echo -n "$(__git_ps1)"
