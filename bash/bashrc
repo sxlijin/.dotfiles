@@ -156,4 +156,7 @@ fi
 # of them, so I just throw them all away.
 complete -r
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 set -x
