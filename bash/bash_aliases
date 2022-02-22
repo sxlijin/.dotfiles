@@ -17,3 +17,18 @@ alias t7='tl 7'
 alias t8='tl 8'
 alias t9='tl 9'
 alias gg="git grep --color -rn"
+
+function inotifywhile {
+    echo ./ INOTIFY-START .
+    inotifywait --monitor --recursive \
+      --event MODIFY \
+      --event CREATE \
+      --event DELETE \
+      --event MOVE \
+      --event ATTRIB \
+      ./
+}
+
+function debounce_stdin {
+  echo "Skipping $(timeout 1 cat | wc -l) events"
+}
