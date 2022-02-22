@@ -133,6 +133,21 @@ then
   PROMPT_COMMAND="{ set +x; } 2>/dev/null; ${PROMPT_COMMAND/%;/}; set -x"
 fi
 
+# macOS ships with ncurses 5.7, which is too old to support TERM=tmux-256color
+# As a result, it needs to get backported; see link for details:
+# https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
+#
+# The summary is that you need to run the following:
+#
+#   /opt/homebrew/opt/ncurses/bin/infocmp -x tmux-256color > /tmp/tmux-256color.src
+#   sed -i "s/pairs#0x10000/pairs#0x01000/" /tmp/tmux-256color.src
+#   /usr/bin/tic -x -o $HOME/.local/share/terminfo /tmp/tmux-256color.src
+#
+# Symlinking against /opt/homebrew/opt/ncurses/lib/terminfo doesn't work even
+# though the `tic` command appears to do the same thing... so :shrug:
+[ -s "${HOME}/.local/share/terminfo" ] \
+  && export TERMINFO_DIRS="${HOME}/.local/share/terminfo"
+
 if [ -s ~/.bash_aliases ]
 then
   . ~/.bash_aliases
