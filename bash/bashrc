@@ -5,7 +5,7 @@
 [[ $- != *i* ]] && return
 
 function dotfiles_root {
-    this_src="$(readlink -f ${BASH_SOURCE[0]})"
+    this_src="$(readlink ${BASH_SOURCE[0]})"
     this_dir="$(dirname ${this_src})"
     test -L "${BASH_SOURCE[0]}" || this_dir="${this_dir}/.dotfiles"
     git_root="$(cd -P ${this_dir} && git rev-parse --show-toplevel)"
@@ -87,8 +87,13 @@ unset color_prompt
 
 PS4='++ $(date "+%Y-%m-%dT%H:%M:%S%z") ++ '
 
+# Set up homebrew if we're in macOS
+[ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # set LS_COLORS
-eval $(dircolors -b "$(dotfiles_root)/dircolors")
+command -v dircolors >/dev/null \
+  && eval $(dircolors -b "$(dotfiles_root)/dircolors") \
+  || eval $(gdircolors -b "$(dotfiles_root)/dircolors")
 
 # set up vcxsrv correctly
 (uname -r | grep --silent WSL2) \
