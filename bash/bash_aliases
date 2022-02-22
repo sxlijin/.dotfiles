@@ -16,4 +16,4 @@ alias t6='tl 6'
 alias t7='tl 7'
 alias t8='tl 8'
 alias t9='tl 9'
-alias ccrgrep="grep --color -rn --include '*.hh' --include '*.cc'"
+alias gg="git grep --color -rn"
