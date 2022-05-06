@@ -16,7 +16,7 @@ alias t6='tl 6'
 alias t7='tl 7'
 alias t8='tl 8'
 alias t9='tl 9'
-alias gg="git grep --color -rn"
+alias gg="git grep -rn"
 
 function inotifywhile {
     echo ./ INOTIFY-START .
