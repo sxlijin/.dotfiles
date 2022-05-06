@@ -7,8 +7,8 @@ endif
 
 " load plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-"call pathogen#infect()
-"call pathogen#helptags()
+call pathogen#infect()
+call pathogen#helptags()
 
 " make tab completion go in the forward direction
 let g:SuperTabDefaultCompletionType = "<c-n>"
