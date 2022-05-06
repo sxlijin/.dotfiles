@@ -74,6 +74,8 @@ autocmd Syntax * normal zR
 " splits
 set splitbelow
 set splitright
+cnoreabbrev sp split +Explore
+cnoreabbrev vs vsplit +Explore
 
 " tabbing
 cnoreabbrev te tabedit
