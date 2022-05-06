@@ -31,8 +31,11 @@ vnoremap ; :
 nnoremap : ;
 vnoremap : ;
 
-" remap jk to escape in insert mode
+" remap jk, kj to escape in insert and command mode (not visual)
 inoremap jk <ESC>
+inoremap kj <ESC>
+cnoremap jk <ESC>
+cnoremap kj <ESC>
 
 " assorted usability settings
 set number
