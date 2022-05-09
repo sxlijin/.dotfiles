@@ -123,7 +123,7 @@ __git_complete g _git
 . "$(dotfiles_root)/git/git-prompt.sh"
 
 # configure https://direnv.net/
-[ -s "/usr/bin/direnv" ] && eval "$(direnv hook bash)" || :
+command -v direnv >/dev/null && eval "$(direnv hook bash)" || :
 
 if [ -n "${PROMPT_COMMAND}" ]
 then
