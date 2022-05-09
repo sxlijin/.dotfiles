@@ -18,16 +18,24 @@ alias t8='tl 8'
 alias t9='tl 9'
 alias gg="git grep -rn"
 
-function inotifywhile {
+if command -v inotifywait &>/dev/null
+then
+  function inotifywhile {
+      echo ./ INOTIFY-START .
+      inotifywait --monitor --recursive \
+        --event MODIFY \
+        --event CREATE \
+        --event DELETE \
+        --event MOVE \
+        --event ATTRIB \
+        ./
+  }
+else
+  function inotifywhile {
     echo ./ INOTIFY-START .
-    inotifywait --monitor --recursive \
-      --event MODIFY \
-      --event CREATE \
-      --event DELETE \
-      --event MOVE \
-      --event ATTRIB \
-      ./
-}
+    fswatch .
+  }
+fi
 
 function debounce_stdin {
   echo "Skipping $(timeout 1 cat | wc -l) events"
