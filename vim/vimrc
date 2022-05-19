@@ -15,9 +15,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " centralize swps and backups, instead of scattering them
 set backupdir-=.
-set backupdir^=~/.vim/bak/
+set backupdir^=~/.vim/.swp/
 set directory-=.
-set directory^=~/.vim/swp/
+set directory^=~/.vim/.swp/
 
 " color settings
 set t_Co=256
