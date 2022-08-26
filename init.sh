@@ -29,7 +29,7 @@ ${dotfiles_dir}/inputrc           .inputrc
 ${dotfiles_dir}/screenrc          .screenrc
 ${dotfiles_dir}/tmux.conf         .tmux.conf
 ${dotfiles_dir}/vim               .vim
-${dotfiles_dir}/xsessionrc        .xsessionrc
+${dotfiles_dir}/xinitrc           .xinitrc
 .vim/vimrc                        .vimrc
 .vim/gvimrc                       .gvimrc
 HERE_DOC
