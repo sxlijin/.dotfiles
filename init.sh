@@ -31,7 +31,7 @@ ${dotfiles_dir}/screenrc          .screenrc
 ${dotfiles_dir}/systemd/          .config/systemd
 ${dotfiles_dir}/tmux.conf         .tmux.conf
 ${dotfiles_dir}/vim               .vim
-${dotfiles_dir}/xinitrc           .xinitrc
+${dotfiles_dir}/xsessionrc        .xsessionrc
 .vim/vimrc                        .vimrc
 .vim/gvimrc                       .gvimrc
 HERE_DOC
