@@ -4,3 +4,6 @@
 [submodule "vim/bundle/vim-polyglot"]
 	path = vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim/bundle/vim-prisma"]
+	path = vim/bundle/vim-prisma
+	url = https://github.com/prisma/vim-prisma
