@@ -17,3 +17,7 @@ Bringing up a new Arch VM (in vbox) can be done as follows:
     1. Enable and start `systemd-networkd`.
     1. Symlink `/etc/resolv.conf` and enable and start `systemd-resolved`.
 
+## WSL2 Machines
+
+Install VcXsrv and at the end of the install wizard, save `config.xlaunch` to
+`C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\`.
