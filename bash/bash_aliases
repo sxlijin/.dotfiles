@@ -5,8 +5,9 @@ alias v='vim -p'
 alias c='clear'
 alias g='git'
 alias k='kubectl'
-alias l='ls -C --classify --color=auto'
-alias la='l --almost-all'
+alias l='ls -F --color=auto'
+alias la='l -a'
+alias ll='l -l'
 alias tl='tree --filelimit 15 -L'
 alias t1='tl 1'
 alias t2='tl 2'
@@ -17,7 +18,6 @@ alias t6='tl 6'
 alias t7='tl 7'
 alias t8='tl 8'
 alias t9='tl 9'
-alias gg="git grep -rn"
 
 if command -v inotifywait &>/dev/null
 then
