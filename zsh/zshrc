@@ -1,0 +1,45 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export HIST_STAMPS="%y-%m-%d %T"
+setopt INC_APPEND_HISTORY
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# set fancy prompts on windows all the time
+[[ $(uname -s) = *MINGW* ]] && color_prompt=yes
+
+if [ "$color_prompt" = yes ]; then
+  export COLORTERM=1
+fi
+
+unset color_prompt
+
+# Set up homebrew if we're in macOS
+[ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if [ -s ~/.bash_aliases ]
+then
+  . ~/.bash_aliases
+fi
+
+if [ -s ~/.bash_locals ]
+then
+  . ~/.bash_locals
+fi
+
+HIST_STAMPS="yyyy-mm-dd"
+plugins=(
+  git
+  poetry
+  rust
+)
+zstyle ':omz:*' aliases no
+export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
+eval "$(starship init zsh)"
+

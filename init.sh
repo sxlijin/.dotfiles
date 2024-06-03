@@ -21,19 +21,22 @@ do
   ln -s "${link_dest}" "${link_ptr}"
 
 done << HERE_DOC
-${dotfiles_dir}/bash/bash_profile .bash_profile
-${dotfiles_dir}/bash/bashrc       .bashrc
-${dotfiles_dir}/bash/bash_aliases .bash_aliases
-${dotfiles_dir}/git/gitignore     .gitignore
-${dotfiles_dir}/imwheelrc         .imwheelrc
-${dotfiles_dir}/inputrc           .inputrc
-${dotfiles_dir}/screenrc          .screenrc
-${dotfiles_dir}/systemd/          .config/systemd
-${dotfiles_dir}/tmux.conf         .tmux.conf
-${dotfiles_dir}/vim               .vim
-${dotfiles_dir}/xsessionrc        .xsessionrc
-.vim/vimrc                        .vimrc
-.vim/gvimrc                       .gvimrc
+${dotfiles_dir}/bash/bash_profile     .bash_profile
+${dotfiles_dir}/bash/bashrc           .bashrc
+${dotfiles_dir}/bash/bash_aliases     .bash_aliases
+${dotfiles_dir}/git/gitignore         .gitignore
+${dotfiles_dir}/imwheelrc             .imwheelrc
+${dotfiles_dir}/inputrc               .inputrc
+${dotfiles_dir}/screenrc              .screenrc
+${dotfiles_dir}/config/starship.toml  .config/starship.toml
+${dotfiles_dir}/config/systemd/       .config/systemd
+${dotfiles_dir}/tmux.conf             .tmux.conf
+${dotfiles_dir}/vim                   .vim
+${dotfiles_dir}/xsessionrc            .xsessionrc
+${dotfiles_dir}/zsh/zprofile          .zprofile
+${dotfiles_dir}/zsh/zshrc             .zshrc
+.vim/vimrc                            .vimrc
+.vim/gvimrc                           .gvimrc
 HERE_DOC
 
 if [[ $(uname -r) =~ WSL2 ]]; then

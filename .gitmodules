@@ -7,3 +7,6 @@
 [submodule "vim/bundle/vim-prisma"]
 	path = vim/bundle/vim-prisma
 	url = https://github.com/prisma/vim-prisma
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh
