@@ -104,14 +104,6 @@ export EDITOR=vim
 # disable flow control so C-s can be used to search forward
 stty -ixon
 
-# if ruby installed, add ruby path to $PATH
-(hash ruby > /dev/null 2>&1) \
-    && export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH:$HOME/.rvm/bin" \
-    || :
-
-# Load RVM into a shell session *as a function*
-[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" || :
-
 # Load cargo
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env" || :
 
@@ -124,14 +116,6 @@ __git_complete g _git
 
 # configure https://direnv.net/
 command -v direnv >/dev/null && eval "$(direnv hook bash)" || :
-
-if [ -n "${PROMPT_COMMAND}" ]
-then
-  # Strip trailing command delimiter from PROMPT_COMMAND using parameter
-  # expansion.  Bash does not consider consecutive command delimiters legal, so
-  # we don't have to worry about replacing ;*$.
-  PROMPT_COMMAND="{ set +x; } 2>/dev/null; ${PROMPT_COMMAND/%;/}; set -x"
-fi
 
 # macOS ships with ncurses 5.7, which is too old to support TERM=tmux-256color
 # As a result, it needs to get backported; see link for details:
@@ -158,20 +142,4 @@ then
   . ~/.bash_locals
 fi
 
-# THIS IS NOT YET COMMITTED. AM USING THIS CONFIG TO TRY THINGS OUT.
-#
-# kinda nasty way to silence tracing during tab-completion
-#SUPPRESS_TRACING_REWRITE="s|^{|{\n    { set +x; } 2>/dev/null;|;s|^}|    set -x;\n}|"
-#eval "$(declare -f _completion_loader | sed "$SUPPRESS_TRACING_REWRITE")"
-#eval "$(declare -f _minimal           | sed "$SUPPRESS_TRACING_REWRITE")"
-#eval "$(declare -f _longopt           | sed "$SUPPRESS_TRACING_REWRITE")"
-#unset SUPPRESS_TRACING_REWRITE
-# We *could* apply various hacks to make command tracing work nicely with the
-# various tab completions that bash comes with, but honestly? I don't use any
-# of them, so I just throw them all away.
-complete -r
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-set -x
+eval "$(starship init bash)"
